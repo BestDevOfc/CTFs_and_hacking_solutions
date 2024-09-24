@@ -1,9 +1,0 @@
-If the file is being displayed using system commands we can use file globalling, for multicharacters you can use "*" 
-
-
-target filename: flag.txt
-
-../../../../f*.*
-
-or single character globbing:
-../../../../../f?a?.t?t (just an example, let's say 'l','g','x' are blacklisted.
