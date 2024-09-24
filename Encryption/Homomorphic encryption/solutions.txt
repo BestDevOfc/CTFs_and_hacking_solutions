@@ -1,0 +1,3 @@
+Sometimes permissions for cookies will be written in numbers kind of like linux UIDs are, like root for 0
+standard for another, etc.
+
