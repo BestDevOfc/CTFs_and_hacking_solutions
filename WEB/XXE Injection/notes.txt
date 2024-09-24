@@ -1,0 +1,6 @@
+XXE injection (XML External Entity) 
+This happens when we're able to create our own entities such as an entity of a /etc/passwd file and pass it into the normal request. This won't be blind because
+our ID (data) will be reflected in the response, so the /etc/passwd data will be displayed as 
+"Invalid Product ID was given [FILE CONTENTS or ID here]."
+
+https://portswigger.net/web-security/xxe#exploiting-xxe-to-retrieve-files

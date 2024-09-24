@@ -1,0 +1,20 @@
+memory
+__wasm_call_ctors
+strcmp
+check_flag
+input
+	copy_char
+__dso_handle
+__data_end
+__global_base
+__heap_base
+__memory_base
+__table_base
+j!	 
+  F!!A
+!" ! "q!# #
+!% $ %q!& 
+!( ' (q!) & )k!* 
+!+ +
+ 	q!
++xakgK\Ns9=8:9l1?im8i<89?00>88k09=nj9kimnu

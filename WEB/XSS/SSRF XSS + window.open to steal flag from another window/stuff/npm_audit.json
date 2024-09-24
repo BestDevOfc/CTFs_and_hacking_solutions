@@ -1,0 +1,76 @@
+{
+    "auditReportVersion": 2,
+    "vulnerabilities": {
+      "puppeteer": {
+        "name": "puppeteer",
+        "severity": "high",
+        "isDirect": true,
+        "via": [
+          "ws"
+        ],
+        "effects": [],
+        "range": "11.0.0 - 18.1.0",
+        "nodes": [
+          "node_modules/puppeteer"
+        ],
+        "fixAvailable": {
+          "name": "puppeteer",
+          "version": "23.1.0",
+          "isSemVerMajor": true
+        }
+      },
+      "ws": {
+        "name": "ws",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1098392,
+            "name": "ws",
+            "dependency": "ws",
+            "title": "ws affected by a DoS when handling a request with many HTTP headers",
+            "url": "https://github.com/advisories/GHSA-3h5v-q93c-6h6q",
+            "severity": "high",
+            "cwe": [
+              "CWE-476"
+            ],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": ">=8.0.0 <8.17.1"
+          }
+        ],
+        "effects": [
+          "puppeteer"
+        ],
+        "range": "8.0.0 - 8.17.0",
+        "nodes": [
+          "node_modules/ws"
+        ],
+        "fixAvailable": {
+          "name": "puppeteer",
+          "version": "23.1.0",
+          "isSemVerMajor": true
+        }
+      }
+    },
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 2,
+        "critical": 0,
+        "total": 2
+      },
+      "dependencies": {
+        "prod": 212,
+        "dev": 0,
+        "optional": 49,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 260
+      }
+    }
+  }

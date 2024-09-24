@@ -1,0 +1,10 @@
+regex can be broken or told to stop using CRLF, this was demonstrated in the "Perfection" hack the box challenge:
+
+
+\r\n
+\n -> %0A
+\0 -> %00
+
+
+for example:
+- goodData%0A{{7*7}}

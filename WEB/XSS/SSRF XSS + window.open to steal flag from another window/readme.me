@@ -1,0 +1,5 @@
+Had to use CSRF + stored XSS
+to make a script that would access a window from the browser (stored XSS, our side, internet facing) to steal the flag of that window.
+
+
+Then we would use "data:text/html,OUR_LOGIN_FORM" to exploit CSRF and submit the form to login to OUR account which will execute the script to steal the flag from the flagWindow. Therefore, before logging in we need to open a new window to /notes with the session of the bot and THEN login (submit our login form).
