@@ -1,0 +1,3 @@
+brew install php
+in the directory with your PHP files run this command: 
+    - http://localhost:8000

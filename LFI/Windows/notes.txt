@@ -1,0 +1,7 @@
+1) /etc/passwd equivalent for windows is:
+    - c:\Windows\win.ini
+
+2) "~" -> partial path assumptions for example:
+c:\Win~ows\win.ini (kind of like "*" in the CLI)
+
+3) URL encoding + double encoding usually works

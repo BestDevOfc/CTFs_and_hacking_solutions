@@ -1,0 +1,4 @@
+hashcat -m 16500 -a 0 JWT.txt /usr/share/wordlists/rockyou.txt 
+
+-m -> hashtype
+-a -> attack method (bruteforce from wordlist)

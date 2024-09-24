@@ -1,0 +1,5 @@
+sometimes URL encoding when there's no parameters can lead to LFI, for example:
+
+site.com/index.html -> shows code of .HTML instead of rendering it.
+
+Now using https://www.urlencoder.org/ encode payload ../../../../../../etc/passwd and try to see if that works.

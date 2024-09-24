@@ -1,0 +1,14 @@
+https://medium.com/@josewice7/lfi-to-rce-via-log-poisoning-db3e0e7a1cf1
+
+let's say we have a PHP file such as index.php?home=FILE,
+any PHP code in that file will be executed and returned to us.
+So we just need to posion log files, render those log files from index.php,
+and the PHP code will be executed.
+
+
+
+https://medium.com/@omarwhadidi9/10-ways-to-get-rce-from-lfi-f2bb696b67f6
+
+log poisoning can be done with FTP, SMTP, SSH logs as well, so keep an eye out for all log files and types.
+
+**** May also be able to use access_log !
