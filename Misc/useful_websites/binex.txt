@@ -1,0 +1,2 @@
+ghidra | ida | another one all in one:
+    - https://dogbolt.org/?id=c47c485f-6201-415e-8648-c3c1066a4da2#BinaryNinja=5

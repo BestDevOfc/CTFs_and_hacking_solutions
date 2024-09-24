@@ -1,0 +1,13 @@
+https://www.aperisolve.com/
+  - EXIFTOOL
+  - binwalk
+  - image processing
+
+
+yandex images
+google images
+https://tineye.com/
+  - reverse image search
+
+https://acropalypse.app/
+  - de-cropping images (leverages vulnerability), if this does not work search for how many "IEND" occurences there are, EXIFTOOL can usually catch it in the "ERRORS" section you'll see it there.

@@ -1,0 +1,15 @@
+They want you to access the /challenge directory which as the picoCTF player we do not have permissions to 
+access. 
+
+in order to escalate privileges we need to try the classic tricks:
+
+sudo nopasswd -> nothing useful
+
+now let's figure out our binaries we can run with sudo and what we have access to:
+sudo -l
+
+    "/bin/sh vi"
+    "sudo (ALL) on challenge"
+let's go to GTFO bins to figure out how to escalate privileges.
+
+and that's it.

@@ -1,0 +1,3 @@
+Deobfuscator:
+  - https://lelinhtinh.github.io/de4js/
+  - CHATGPT

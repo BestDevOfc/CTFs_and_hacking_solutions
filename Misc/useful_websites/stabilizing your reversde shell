@@ -1,0 +1,3 @@
+https://infosec.danielvelez.me/zsh/fully-upgrading-simple-shells-zsh/
+
+python -c "import pty;pty.spawn('bash')"
