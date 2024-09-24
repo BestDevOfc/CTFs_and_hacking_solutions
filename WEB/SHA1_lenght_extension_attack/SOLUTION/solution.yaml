@@ -1,0 +1,92 @@
+https://log.kv.io/post/2011/03/04/exploiting-sha-1-signed-messages
+
+so pretty much the reason this lenght extension attack for SHA1 exploit works is because we're just padding
+a bunch of zeroes and appending new data and using the original hash as our new H1... values,
+doing this we just need to guess the lenght of the salt (so we can do proper padding, remember
+each chunk is 64 bytes), and we'll still have a valid hash since the hash values we're using are
+from the valid hash that was used with original data + secret key.
+
+
+Now you may be asking, why do we need to know the length of the salt?
+The reason we need to know the lenght of the salt is because 
+in SHA1 hashing algorithm there are 3 components:
+1) SALT
+2) MESSAGE (DATA)
+3) single bit (0x80, separates padding from salt+message)
+4) PADDING (zeroes)
+5) total bit lenght ( lenght of message + salt )
+**** we don't need the lenght of the salt to be included in the total bit lenght for our custom chunk (c1),
+  but we still need to know it so we know how much padding we need to add!
+
+Therefore, let's say we have an original hash of "18d2fccddeba1b08304fb53e849be5711d55b2e0"
+with data "from=123&to=456&amount=50", in order to make a 64 bit chunk we need to do this:
+
+[-] salt = "SECRET_SALT" (note, how the lenght is 11)
+[-] data = "from=123&to=456&amount=50"
+[-] single bit: 0x80
+
+how the first 64 bit chunk will look like:
+
+SECRET_SALTfrom=123&to=456&amount=50 (0x80)(padding of 0s until 64 bit chunk)
+
+(SECRET_SALT representation in hex) ( message in HEX )
+53 45 43 52 45 54 5f 53 41 4c 54    66 72 6f 6d 3d
+31 32 33 26 74 6f 3d 34 35 36 26    61 6d 6f 75 6e
+74 3d 35 30 80 00 00 00 00 00 00    00 00 00 00 00 <------ now padding begins here
+            ^ single bit(separates padding from salt+data)
+00 00 00 00 00 00 00 00 00 00 00    00 00 00 01 20
+                                              ^-^-- 0x120 = 128 bits = 36 bytes, this is the lenght of
+                                                the salt + message
+                                                11 + 25 = 36 bytes
+
+Now, how does SHA1 calculate this, it uses an algorithm with seed values
+
+h0 -> 0x67452301
+h1 -> 0xefcdab89
+h2 -> 0x98badcfe
+h3 -> 0x10325476
+h4 -> 0xc3d2e1f0
+
+Now what if a chunk is larger than just 1? What will the values be for the new chunk?
+The values will be resued from the hash of C0.
+Therefore, if we know the HASH of SECRET_SALT+message we can use that as our h1-h4 values,
+add new data and just guess or bruteforce what our salt length is (this is because of the total bit length part
+needed in each chunk.)
+
+It's extremely important to understand this, let's say for this challenge the file names (image names)
+were not passed, but we were only given ENUM values (like 1, 2, 3, etc), this attack would not be possible.
+
+Here's why.
+
+0 -> 18u2929widjekd.png
+2 -> 2oeijdhuieded.png
+3 -> 3dokeijuhdygtye.png
+
+GET /images?image=0&hash=HASH,
+in the background we'll do 
+sha1(SECRET_SALT . 18u2929widjekd.png) == $_GET['HASH']
+
+However, lucky for us, the names of the file names are shown to us.
+
+Okay, so now we need to generate a new chunk (C1), and use the previous hash
+as our new seed values
+
+C1 (chunk 2)
+
+&to=666&amount=99999
+*** PHP looks at the LAST occurence of query parameters and ignores the first ones
+if there are duplicates, so PHP will take our injected data as a preference over the 
+initial (original) one.
+
+(our injected data)
+^
+26 74 6f 3d 36 36 36 26 61 6d 6f 75 6e 74 3d 39
+39 39 39 39 (80) <- single bit
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 <-- padding to reach 64 bytes
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 (02 a0) -> lenght bits
+                                        ^^^^^^^^
+total bit lenght this time will be 64 bytes + 20 bytes = 84 = 0x02a0
+
+
+
