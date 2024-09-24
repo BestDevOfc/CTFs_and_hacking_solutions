@@ -1,0 +1,10 @@
+This is a good solution, they give you two buttons, one to change the background to "RED" and the 
+other to change it to "BLUE". Upon inspecting the requests in burp it turns out the blue is a POST and red is a GET.
+
+The name says get aHEAD, HEAD is a HTTP protocol that acts the same as GET but has a different name.
+
+** THIS IS A GOOD CTF PRACTICE because many CSRF protections can be bypassed by changing the protocols from 
+    GET to HEAD, Gitlabs would've had one if they did not do 
+    if http.request == GET:
+        check CSRF
+explicitly!
