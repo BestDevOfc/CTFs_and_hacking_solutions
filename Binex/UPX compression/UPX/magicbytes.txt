@@ -1,0 +1,3 @@
+if upx -d BINARY -o uncompressed or even adding --force 
+doesn't work it may mean the magic bytes are being messed with like here:
+https://metactf.com/blog/flash-ctf-go-vote/
