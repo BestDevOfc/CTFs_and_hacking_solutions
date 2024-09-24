@@ -1,0 +1,23 @@
+1) grep -ri "pico" .
+
+I found NO FLAG (unlike like last time). So clearly they want us to learn more about the .GIT structure, so I 
+took to openai
+
+the reason I did this is because when I checked the logs file I found a commit that said 
+"creating flag" and then one right after saying "removing sensitive info", so I knew the commit history
+probably uploaded a file that had the flag in it, but this time it was an object.
+
+So I went into the "objects" folder and they were all two character directory names, 
+looking closely I realized these correspond to hashes. When I went into the folder
+that matched the hash for the "creating flag" commit I found some weird 
+encoded file. That's when I realized this is probably compressed.
+
+After openai's prompt it turns out this is how we decompress the GIT data:
+
+"git cat-file -p HASH"
+this works on:
+- trees
+- objects
+- everthing with a hash
+
+after following some hashes I found a TXT file, after catting the hash of that file I found the flag.

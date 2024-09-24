@@ -1,0 +1,10 @@
+Seems like a normnal PDF file that has only a fragment of the flag.
+
+I ran strings on the PDF, nothing came up.
+
+I know if it was an image file I would view the metadata, so I put it in:
+
+https://www.metadata2go.com/view-metadata
+
+and looked through carefully, what caught my eye was that the file type it says is
+PNG, so I changed it to PNG and it worked I got the first half of the flag - done !

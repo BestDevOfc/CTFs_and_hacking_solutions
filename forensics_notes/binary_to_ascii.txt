@@ -1,0 +1,6 @@
+If there's some binary data just open it in hexedit or run xxd on it. This was one of the practice picoCTFs, the flag file
+was found in the image after extracting all of the files using
+
+1) "binwalk -e IMAGE_FILE.img"
+2) xxd "flag.uni.txt"
+    - read the ASCII text.
