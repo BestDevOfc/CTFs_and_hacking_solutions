@@ -1,0 +1,8 @@
+protections on this binary:
+  - SHSTK
+      has a shadow stack, if the function return pointers are different (they don't match on both the shadow stack
+      and the stack, then the program will be terminated.)
+  - NX -> ensures the stack is non-executable (shellcode cannot be pushed and run on the stack)
+  - IBT
+    something to do with branches?
+    
