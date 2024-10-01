@@ -1,0 +1,4 @@
+for factoring vulnerable modulus (N) to get the prime numbers (P and Q) which can be used to calculate the private 
+key and decrypt
+
+https://factordb.com/
