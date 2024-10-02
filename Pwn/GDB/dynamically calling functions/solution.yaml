@@ -1,0 +1,6 @@
+1) gdb binary
+2) break printf
+
+3) info functions getflagbytid
+  - (gives me address of it, now ik it's in scope and loaded in         memory)
+4) call (int) getflagbytid(4930)
