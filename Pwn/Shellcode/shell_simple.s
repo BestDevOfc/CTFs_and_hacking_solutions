@@ -1,5 +1,6 @@
 # credits: pwn college
 # to compile: gcc -nostdlib -static shellcode.s -o shellcode-elf
+# to parse the shellcode: objcopy --dump-section .text=shellcode_raw shellcodeelf 
 .global _start
 _start:
 .intel_syntax noprefix
