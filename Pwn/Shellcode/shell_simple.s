@@ -10,7 +10,7 @@ _start:
     lea rdi, [rip+binsh]    # into the first argument passing in "/bin/sh"
     mov rsi, 0              # NULL for second argument
     mov rdx, 0              # NULL for third argument
-    syscall
+    syscall                 # Remember, privileged processes are handed to the kernel, since we're in "userland" we cannot do it.
 
 binsh:
     .string "/bin/sh"
