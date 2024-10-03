@@ -6,6 +6,8 @@
 /*
 When debugging if you get a segfault you can do 
 x/i $rip to see what the next instruction was (where it crashed)
+to print the value of a register 
+x/gx $rsi
 
 */
 .global _start
