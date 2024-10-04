@@ -1,0 +1,3 @@
+for pwn:
+  1) build: docker build -t my_docker_image .
+  2) deploy: 
