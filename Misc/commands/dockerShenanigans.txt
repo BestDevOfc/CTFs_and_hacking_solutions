@@ -1,3 +1,6 @@
-for pwn:
+General:
+  - docker images (to see your images)
+
+For PWN:
   1) build: docker build -t my_docker_image .
   2) deploy: 
