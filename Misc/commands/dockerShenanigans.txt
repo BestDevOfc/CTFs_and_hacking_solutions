@@ -1,5 +1,7 @@
 General:
   - docker images (to see your images)
+  - docker run -it my_docker_image2 /bin/bash
+    - get an interactive shell
 
 For PWN:
   1) build: docker build -t my_docker_image .
