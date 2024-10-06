@@ -1,0 +1,3 @@
+yescrypt:
+john --format=crypt --wordlist=/Users/muhammadali/Documents/SecLists/rockyou.txt passwords.txt
+  - $y$j9T$/WzixhAsn8sdXhCquYzh01$KZlio78LilItobsx/17ecFf1e2SbsduhP1sZEWuHrL4
