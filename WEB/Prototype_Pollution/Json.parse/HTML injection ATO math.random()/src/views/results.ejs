@@ -1,0 +1,36 @@
+<%- include('partials/head', { pageTitle: 'ChimpType - Test Results' }) %>
+<%- include('partials/header') %>
+
+<main tabindex="0">
+    <section class="typing-test-results-container">
+        <h2>Test Results</h2>
+        <div class="typing-test-results-chart-container">
+            <canvas id="typing-test-chart" width="500" height="300"></canvas>
+        </div>
+        <div class="typing-test-results-stats">
+            <div class="typing-test-results-stats-item">
+                <h3>WPM</h3>
+                <p id="wpm">0</p>
+            </div>
+            <div class="typing-test-results-stats-item">
+                <h3>Accuracy</h3>
+                <p id="accuracy">0%</p>
+            </div>
+        </div>
+        <div class="typing-test-results-paragraphs">
+            <div class="typing-test-results-paragraph">
+                <button type="submit" class="save-results-button">Save Results</button>
+                <p class="save-results-button-description">Save your results to your account. You can only save one result at once.</p>
+            </div>
+            <div class="typing-test-results-paragraph">
+                <button type="submit" class="report-results-button">Report Issue</button>
+                <p class="save-results-button-description">See anything incorrect? Send this test result to an admin for review.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="/static/js/chart.js"></script>
+<script src="/static/js/results.js"></script>
+
+<%- include('partials/footer') %>

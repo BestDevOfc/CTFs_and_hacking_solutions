@@ -1,0 +1,18 @@
+<header>
+    <div class="container">
+        <h1><a class="title" href="/">ChimpType</a></h1>
+        <nav class="nav-links">
+            <% if (locals.username) { %>
+                <!-- <span>Hello, <%= locals.username %></span> -->
+                <a href="/profile" class="nav-button">Profile</a>
+                <a href="/leaderboard" class="nav-button">Leaderboard</a>
+                <a href="/changepassword" class="nav-button">Change Password</a>
+                <a href="/logout" class="nav-button">Logout</a>
+            <% } else { %>
+                <a href="/leaderboard" class="nav-button">Leaderboard</a>
+                <a href="/login" class="nav-button">Login</a>
+                <a href="/register" class="nav-button">Register</a>
+            <% } %>
+        </nav>
+    </div>
+</header>

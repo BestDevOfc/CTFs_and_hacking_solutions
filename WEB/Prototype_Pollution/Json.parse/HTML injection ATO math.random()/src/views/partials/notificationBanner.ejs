@@ -1,0 +1,9 @@
+<% if (typeof status !== 'undefined' && status.message) { %>
+    <div class="notification-banner
+        <% if (status.error) { %> notification-error <% } %>
+        <% if (status.success) { %> notification-success <% } %>
+        <% if (status.info) { %> notification-info <% } %>
+    ">
+        <p><%= status.message %></p>
+    </div>
+<% } %>

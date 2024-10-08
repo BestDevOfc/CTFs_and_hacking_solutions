@@ -1,0 +1,30 @@
+<%- include('partials/head', { pageTitle: 'ChimpType - Leaderboard' }) %>
+<%- include('partials/header') %>
+
+<%- include('partials/notificationBanner') %>
+
+<main>
+    <section class="leaderboard-container">
+        <h2>Leaderboard</h2>
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Best WPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach((user, index) => { %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= user.username %></td>
+                        <td><%= user.bestWPM %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<%- include('partials/footer') %>
