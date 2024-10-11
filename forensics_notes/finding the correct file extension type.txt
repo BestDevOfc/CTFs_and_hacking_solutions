@@ -1,3 +1,7 @@
+IHDR================================================================================================================================================
+*** MetaData ***
+
+
 Seems like a normnal PDF file that has only a fragment of the flag.
 
 I ran strings on the PDF, nothing came up.
@@ -8,3 +12,19 @@ https://www.metadata2go.com/view-metadata
 
 and looked through carefully, what caught my eye was that the file type it says is
 PNG, so I changed it to PNG and it worked I got the first half of the flag - done !
+
+
+================================================================================================================================================
+*** Magic Bytes ***
+
+JPEG/JFIF  --> FF D8 FF E0 00 10 4A 46 49 46 00 01
+
+PNG --> 89 50 4E 47 0D 0A 1A 0A
+      * if the magic bytes do not match for a file then most likely it is either corrupt or the wrong file type has been given to you,
+        run "strings image" and look through to see any keywords that might hint at a different file type (this was seen in NCL Gym).
+      - IDAT
+      - IHDR
+
+
+
+================================================================================================================================================
