@@ -1,0 +1,2 @@
+XZ files (decompressing):
+  xz -d -v 
