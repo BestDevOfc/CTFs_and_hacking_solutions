@@ -1,1 +1,2 @@
 wlan.wep.iv
+smb2.cmd == 0x1 and smb2.nt_status == 0x00000000
