@@ -1,6 +1,14 @@
 If there's some binary data just open it in hexedit or run xxd on it. This was one of the practice picoCTFs, the flag file
 was found in the image after extracting all of the files using
 
-1) "binwalk -e IMAGE_FILE.img"
-2) xxd "flag.uni.txt"
-    - read the ASCII text.
+Extracting all of the files:
+    binwalk --dd='.*' green_file
+            **** then run "file NAME" on each file, rename the extensions,
+                and work your way from there, this was the solution for the NCL gym, after
+                extracting we just ran file and saw one of the file types was a "posix tar", so I renamed the file
+                to RANDOM.tar -> extract -> flag/ -> flag.txt
+
+one whole extracted binary file:
+    1) "binwalk -e IMAGE_FILE.img"
+    2) xxd "flag.uni.txt"
+        - read the ASCII text.
