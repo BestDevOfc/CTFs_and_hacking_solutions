@@ -17,6 +17,10 @@ PNG, so I changed it to PNG and it worked I got the first half of the flag - don
 ================================================================================================================================================
 *** Magic Bytes ***
 
+* Cyberchef has a STRINGS for files as well, super handy!
+          - https://gchq.github.io/CyberChef/
+
+
 JPEG/JFIF  --> FF D8 FF E0 00 10 4A 46 49 46 00 01
 
 PNG --> 89 50 4E 47 0D 0A 1A 0A
