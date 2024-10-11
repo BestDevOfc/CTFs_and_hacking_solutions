@@ -1,6 +1,22 @@
-wlan.wep.iv
+====================================================================================
+Wifi-Related:
+
+[*] wlan.wep.iv
+
+[*] Deauth packets:
+  - wlan.fc.type_subtype == 0x0c
+
+[*] Filtering out certain Mac addresses (da = destination, source address = sa):
+    - !(wlan.da == b8:e8:56:47:44:38) && !(wlan.sa == b8:e8:56:47:44:38)
+
+====================================================================================
+
+
+
+====================================================================================
+Other:
+
 smb2.cmd == 0x1 and smb2.nt_status == 0x00000000
 http.request.method == "POST"
 
-Deauth packets:
-  - wlan.fc.type_subtype == 0x0c
+====================================================================================
