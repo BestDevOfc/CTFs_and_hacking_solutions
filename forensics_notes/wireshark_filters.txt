@@ -1,3 +1,6 @@
 wlan.wep.iv
 smb2.cmd == 0x1 and smb2.nt_status == 0x00000000
 http.request.method == "POST"
+
+Deauth packets:
+  - wlan.fc.type_subtype == 0x0c
