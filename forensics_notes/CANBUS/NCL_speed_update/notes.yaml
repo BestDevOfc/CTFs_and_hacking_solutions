@@ -1,15 +1,1 @@
-wget -O pcap.pcap https://c7fd-2600-1700-1ce0-f3a0-b8be-bb9d-b278-8762.ngrok-free.app
 
-https://trove.cyberskyline.com/41570c1e3a974808a838a9f83c2f6d4a
-
-
-9	0.355330		TpLinkTechno_80:76:e4 (c0:4a:00:80:76:e4) (RA)	802.11	10	Acknowledgement, Flags=........
-
-
-5A 75 D7 85 D4 01 7C 70 20 E9 65 FD FC E5 45 4B DD DC 99 33 93 23 81 52 D7 FD CA 4E A8 34 82 C0
-
-147815	947.534554	TpLinkTechno_80:76:e4	
-
-b8:e8:56:47:44:38
-
-	802.11	26	Deauthentication, SN=0, FN=0, Flags=........
