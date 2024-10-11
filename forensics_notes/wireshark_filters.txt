@@ -11,6 +11,10 @@ Wifi-Related:
 
 ====================================================================================
 
+Exporting
+
+[*] to export certain data you can click "add to column" and "export packet dissections" based on the "text summary", I had to do this for the CANBUS NCL Gym one.
+
 
 
 ====================================================================================
