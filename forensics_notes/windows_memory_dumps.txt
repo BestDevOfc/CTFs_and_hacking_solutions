@@ -1,3 +1,4 @@
+https://book.jorianwoltjer.com/forensics/memory-dumps-volatility
 1) volatality imageinfo file.mem
 2) get the profile name from above command ^ and run:
    volatality cmdline -f memdump.mem --profile=Win10x64
