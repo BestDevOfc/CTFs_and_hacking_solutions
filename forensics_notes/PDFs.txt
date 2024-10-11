@@ -1,0 +1,11 @@
+================================================================================================
+[*] - REDACTED PDFS
+  - Blacked out
+      - View in Mac Preview or VSCode PDF viewer
+      - view exif data sometimes the text data is in it
+
+  - Pixels (blurred)
+      - Use DePix
+
+
+================================
