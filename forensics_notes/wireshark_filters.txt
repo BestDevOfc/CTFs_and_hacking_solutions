@@ -20,6 +20,9 @@ Exporting
 ====================================================================================
 Other:
 
+[*] Exporting files:
+  - File > export objects > protocol (such as HTTP) > download
+
 smb2.cmd == 0x1 and smb2.nt_status == 0x00000000
 http.request.method == "POST"
 
