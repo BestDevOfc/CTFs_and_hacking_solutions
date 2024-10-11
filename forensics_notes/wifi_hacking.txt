@@ -1,0 +1,5 @@
+- WEP KEY can be cracked with enough IVs due to the poor nature by design
+  [*] aicrack-ng pcap.pcap
+- WPAs PASSWORD have to be cracked using a dictionary
+  [*] aicrack-ng pcap.pcap -w rockyou.txt
+
