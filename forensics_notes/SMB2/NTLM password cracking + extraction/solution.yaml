@@ -1,0 +1,17 @@
+For this solution we needed to find the credentials used by a NXC spraying attack on a AD network.
+We are provided a PCAP file, my first thought was to simply look for SMB2 packets that had successful 
+authentication.
+Here is the filter:
+
+smb2.cmd == 0x1 and smb2.nt_status == 0x00000000
+
+1) cmd = 0x1 means we're looking for SMB2 packets of type RESPONSE (because this is where we'd see if the auth was successful or not)
+2) smb2.nt_status (was the nt auth successful, if so 0 should be the value)
+
+after doing this only ONE packet is returned, right click on it, click follow, then close the new window and go back.
+Only the SMB2 packets corrensponding to the valid authentication should be visible now.
+
+After looking through grab all the data needed to crack it with hashcat, I watched this tutorial for that:
+  - https://www.youtube.com/watch?v=lhhlgoMjM7o&ab_channel=EmbraceTheRed
+  - password: ih8hackers
+  - hashcat file: Administrator::DESKTOP-DCCORQ2:0296ff2a0a15d889:0e0050b2a8e9d6d8abf9547fafcc6f9d:01010000000000003511875e6efbda01357363556e7353510000000002001e004400450053004b0054004f0050002d004400430043004f0052005100320001001e004400450053004b0054004f0050002d004400430043004f0052005100320004001e004400450053004b0054004f0050002d004400430043004f0052005100320003001e004400450053004b0054004f0050002d004400430043004f00520051003200070008003511875e6efbda010900280063006900660073002f004400450053004b0054004f0050002d004400430043004f005200510032000000000000000000
