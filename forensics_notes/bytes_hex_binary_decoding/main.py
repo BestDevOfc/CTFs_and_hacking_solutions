@@ -5,8 +5,8 @@ import base64
 # https://www.epochconverter.com/
 
 def unix_to_UTC(unix):
-    unix = f"{unix}".strip().rstrip()
-    UTC = datetime.datetime.fromtimestamp(1347517370).strftime('%c').split()
+    unix = int(f"{unix}".strip().rstrip())
+    UTC = datetime.datetime.fromtimestamp(unix).strftime('%c').split()
     UTC = f"{UTC[0]} {UTC[1]} {UTC[2]}"
     return UTC
 
