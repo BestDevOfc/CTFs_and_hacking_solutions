@@ -1,6 +1,24 @@
+========================================================================
+[*] - Volatality3
+
+*** Intallation: ***
+sudo apt install git build-essential libssl-dev libffi-dev python3-dev
+git clone https://github.com/volatilityfoundation/volatility3.git
+cd volatility3
+pip3 install -r requirements.txt
+python3 vol.py --help
+
+
+cheat sheet:
+   [>] https://trove.cyberskyline.com/eaa752e9e94b46a4abea43b7019d0a1b
+
+
+========================================================================
+Volatality (shitty):
+
 https://book.jorianwoltjer.com/forensics/memory-dumps-volatility
 1) volatality imageinfo file.mem
 2) get the profile name from above command ^ and run:
    volatality cmdline -f memdump.mem --profile=Win10x64
 
-
+========================================================================
