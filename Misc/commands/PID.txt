@@ -1,0 +1,3 @@
+ps faux
+kill -9 <PID>
+fuser -k pwny1 (FILE BEING HELD WILL KILL ANNY PROCESS HOLDING IT)
