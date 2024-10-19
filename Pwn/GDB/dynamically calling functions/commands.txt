@@ -1,1 +1,7 @@
 x/gx HEX or HEX expression
+
+
+Finding the LibC version of a binary:
+    [*] - To check your LIBC Version of binary:
+    ldd /bin/bash
+    strings PATH_TO_LIBC | grep "GNU"
