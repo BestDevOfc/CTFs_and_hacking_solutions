@@ -60,6 +60,12 @@ OPTIONAL (mandatory if testing locally then remotely), if your OS does not have 
 * Now we are using the same libC and LD as the source machine, this is useful bcs if we locally test and try to 
     leak a PIE pointer from the general memory region of the binary it does not work (match up with solution's).
     For example, %6$p on kali does not start with the 555 but on the remote it does.
+
+* I solved it finally ty !
+fully recreated it using logic I also talked w/ Anthony and figured out exactly what u meant by the last 3 nibbles are not affected even by ASLR
+bcs Anthony got the offset on his local m achine smt like 0x#F00
+
+since F00 stay the same he just bruteforced 16 combinations of the # which he got was 2 during that run to get the correct offset!
 '''
 
 
