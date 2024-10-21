@@ -1,1 +1,0 @@
-hashcat -m 0 hash.txt --wordlist ~/Documents/SecLists/rockyou.txt --rules-file append_2_numbers_special_character_exclamation.rule
