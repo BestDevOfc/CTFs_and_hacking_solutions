@@ -2,3 +2,4 @@ for factoring vulnerable modulus (N) to get the prime numbers (P and Q) which ca
 key and decrypt
 
 https://factordb.com/
+https://www.alpertron.com.ar/ECM.HTM
