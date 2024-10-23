@@ -1,0 +1,2 @@
+sudo apt install liblnk-utils
+lnkinfo <LNK_FILE>
