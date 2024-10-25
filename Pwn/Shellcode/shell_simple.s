@@ -6,7 +6,7 @@ man 2 execve
 
 # to compile: gcc -nostdlib -static shellcode.s -o shellcode-elf
 # to parse the shellcode: objcopy --dump-section .text=shellcode_raw shellcodeelf 
-        - echo "" > shellcode_raw (adds a newline at the end of the shellcode, may be needed)!
+        - echo "" >> shellcode_raw (adds a newline at the end of the shellcode, may be needed)!
 # when sending to vulnerable program: cat shellcode-raw; cat
 # reason we have the "cat" is that it'll immediately terminate once bin/sh is run we need to make it hang
 */
