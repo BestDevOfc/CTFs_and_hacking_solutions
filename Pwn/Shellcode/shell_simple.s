@@ -1,5 +1,9 @@
 /*
 credits: pwn college
+
+man 2 execve
+
+
 # to compile: gcc -nostdlib -static shellcode.s -o shellcode-elf
 # to parse the shellcode: objcopy --dump-section .text=shellcode_raw shellcodeelf 
         - echo "" > shellcode_raw (adds a newline at the end of the shellcode, may be needed)!
