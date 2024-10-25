@@ -1,1 +1,2 @@
-?id[$regex]=.*
+Syntax Injection:
+  ?id[$regex]=.*
