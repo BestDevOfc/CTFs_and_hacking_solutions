@@ -1,0 +1,8 @@
+* Cannot send more than 12 eggs
+
+  Original: {"item":"eggs","amount":[100]}
+
+  Solution: {"item":"eggs","amount":[100]}
+    - reason this works is perhaps the check fails for when checking if input >= 12, it may also have a && type(input) == number,
+    and since it's an array it bypasses it. It is NOT because [100] >= 12 = False, this IS TRUE, just for some reason the type 
+    of array allowed for the calculation to work but bypass the conditional statement. [100]-90 = 10 (so u can do loose type math in nodeJS).
