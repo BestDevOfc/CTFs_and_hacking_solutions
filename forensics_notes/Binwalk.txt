@@ -8,7 +8,7 @@ Extracting all of the files:
                 extracting we just ran file and saw one of the file types was a "posix tar", so I renamed the file
                 to RANDOM.tar -> extract -> flag/ -> flag.txt
 
-one whole extracted binary file:
+one whole extracted binary file / AP:
     1) "binwalk -e IMAGE_FILE.img"
     2) xxd "flag.uni.txt"
         - read the ASCII text.
