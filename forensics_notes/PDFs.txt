@@ -7,5 +7,11 @@
   - Pixels (blurred)
       - Use DePix
 
+- run exiftool and look for docx, etc and then use the microsoft or respective software to unredact it.
+    [*] for example, we were given a PDF file but running exiftool on it shows: 
+        "exiftool Financial_Report_for_ABC_Labs.pdf | grep docx"
+        "Title                           : Microsoft Word - Financial Report for ABC Labs.docx"
+    [*] loading this into MS-word allows us to simply remove the redacted black boxes, you could also just copy the whole page
+      and paste it to get the flag.
 
 ================================
