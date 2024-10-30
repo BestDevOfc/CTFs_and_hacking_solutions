@@ -5,6 +5,15 @@ Tools + Parsing:
 
 
 ====================================================================================
+Torrenting-Related:
+
+[*] Interesting protocols: BT-DHT (Bittorrent), look for:
+        [+] Challenge Name: PicoCTF Torrent Analyze
+        [1] udp contains "hash" -> throw hashes into Qbittorrent to figure out what they were downloading
+        [2] udp contains "announce" -> typically it means they have the full file and are now seeding it for others, this hash may be useful too + have useful file names or metadata
+
+
+====================================================================================
 Wifi-Related:
 
 [*] wlan.wep.iv
