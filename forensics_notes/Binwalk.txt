@@ -12,3 +12,9 @@ one whole extracted binary file / AP:
     1) "binwalk -e IMAGE_FILE.img"
     2) xxd "flag.uni.txt"
         - read the ASCII text.
+
+
+
+
+Recursively Extract:
+    - binwalk -Me decompressed_flag --run-as=root
