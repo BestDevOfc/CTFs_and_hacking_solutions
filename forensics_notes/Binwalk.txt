@@ -18,3 +18,6 @@ one whole extracted binary file / AP:
 
 Recursively Extract:
     - binwalk -Me decompressed_flag --run-as=root
+
+
+binwalk --dd ".*" file # Extracts all data
