@@ -1,3 +1,7 @@
+AMD QEMU virtualization:
+  - docker run --rm -it --platform linux/amd64 rofrano/vagrant-provider:debian bash
+
+
 General:
   - docker images (to see your images)
   - docker run -it my_docker_image2 /bin/bash
