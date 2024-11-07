@@ -1,5 +1,5 @@
 AMD QEMU virtualization:
-  - docker run --rm -it --platform linux/amd64 rofrano/vagrant-provider:debian bash
+  - docker run -it --platform linux/amd64 rofrano/vagrant-provider:debian bash
 
 
 General:
