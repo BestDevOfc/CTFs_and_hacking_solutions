@@ -1,5 +1,14 @@
+################################################
+
+#### Steg seek ####
+- Installing:
+  - https://github.com/RickdeJager/stegseek/releases/tag/v0.6
+  - sudo apt install ./stegseek_0.6-1.deb
 - To crack a steg password:
   stegseek /tmp/pie.jpg /opt/rockyou.txt
 
 - To check whether it was processed using steghide:
 stegseek --seed /tmp/pie.jpg
+
+
+################################################
