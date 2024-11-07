@@ -1,4 +1,8 @@
 ================================================================================================
+[*] - Extracting all images:
+      brew install poppler
+      pdfimages -all input.pdf output_prefix
+
 [*] - REDACTED PDFS
   - Blacked out
       - View in Mac Preview or VSCode PDF viewer
