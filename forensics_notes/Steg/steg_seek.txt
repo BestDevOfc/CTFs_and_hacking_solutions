@@ -1,11 +1,3 @@
-################################################
-#### Steg in binaries/ELF files ####
-- apt install cargo -y
-- cargo install steg86
-- cargo build
-- steg86 extract BINARY > data
-
-
 
 ################################################
 
