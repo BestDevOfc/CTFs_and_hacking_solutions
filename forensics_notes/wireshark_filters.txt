@@ -1,4 +1,8 @@
 ====================================================================================
+Searching for a string:
+    - frame contains "Bro... just reverse everything and you should know what to do."
+
+====================================================================================
 Tools + Parsing:
 [*] Network Miner
     - https://www.netresec.com/?page=NetworkMiner
