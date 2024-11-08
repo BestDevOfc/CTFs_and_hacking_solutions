@@ -1,0 +1,14 @@
+################################################
+- steg86
+- to install:
+  apt install cargo -y
+  cargo install steg86
+  nano ~/.bashrc
+  export PATH=$PATH:/root/.cargo/bin
+  source ~/.bashrc
+  steg86 -h
+
+- to extract message:
+  - steg86 extract bash.steg > my_message
+
+################################################
