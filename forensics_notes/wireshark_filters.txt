@@ -1,4 +1,7 @@
 ====================================================================================
+Searching for a specific IP:
+    - ip.src or ip.dst
+====================================================================================
 Searching for a string:
     - frame contains "Bro... just reverse everything and you should know what to do."
 
