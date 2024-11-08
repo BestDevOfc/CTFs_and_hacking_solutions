@@ -14,4 +14,8 @@
 - To see steg in audio files via Audio Spectrum Analyzer:
       - https://www.maztr.com/audiospectrumanalyzer
 
+- DTMF Decoder:
+      - you'll know it's encoded via DTMF if it sounds like a phone beep. Moreover, when you decode you should see 0-9 numbered digits.
+      - https://dtmf.netlify.app/
+
 ############################################################
