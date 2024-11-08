@@ -1,2 +1,15 @@
+############################################################
+### Images:
 - aperisolve.com
 - https://georgeom.net/StegOnline/image
+
+############################################################
+
+
+############################################################
+
+### Audio:
+- To see steg in audio files via Audio Spectrum Analyzer:
+      - https://www.maztr.com/audiospectrumanalyzer
+
+############################################################
