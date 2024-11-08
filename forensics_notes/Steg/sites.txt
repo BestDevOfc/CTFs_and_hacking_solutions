@@ -2,6 +2,8 @@
 ### Images:
 - aperisolve.com
 - https://georgeom.net/StegOnline/image
+- Weird virtual card decoder BESM 1900s machine:
+      - https://masswerk.at/cardreader/
 
 ############################################################
 
