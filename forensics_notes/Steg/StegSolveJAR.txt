@@ -1,0 +1,4 @@
+wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
+chmod +x stegsolve.jar
+
+java -jar stegsolve.jar
