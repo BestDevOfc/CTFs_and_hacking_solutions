@@ -4,6 +4,8 @@ Searching for a specific IP:
 ====================================================================================
 Searching for a string:
     - frame contains "Bro... just reverse everything and you should know what to do."
+    - frame contains "touch flag.txt"
+        *** ALWAYS USE QUOTES !
 
 ====================================================================================
 Tools + Parsing:
