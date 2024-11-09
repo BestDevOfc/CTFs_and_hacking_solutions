@@ -1,3 +1,5 @@
+# https://nisaruj.medium.com/spot-the-difference-secplayground-christmas-ctf-2023-writeup-bf7bdb9ef40c
+# knitting gir
 from PIL import Image
 
 im = Image.open('flowers.png', 'r')
