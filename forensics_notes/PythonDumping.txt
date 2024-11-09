@@ -1,0 +1,6 @@
+First use pyinstraxtor to get PYC files
+  - python3 pyinstxtractor.py /path/to/your/file.elf
+
+Then use decompyle3 to get source code
+  - pip install decompyle3
+    - decompyle3 main.pyc
