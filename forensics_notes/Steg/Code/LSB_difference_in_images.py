@@ -20,6 +20,7 @@ for i in range(len(pix_val)):
         # iterating every channel (if it's in RGBA mode)
         for j in range(4):
             print(bin(one[j]), bin(two[j]))
+            # getting the least significant bit (last digit in the binary string hence the [-1] ):
             flag += bin(two[j])[-1]
          
 print(flag)
