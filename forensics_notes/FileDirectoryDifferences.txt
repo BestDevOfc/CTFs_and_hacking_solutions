@@ -1,0 +1,3 @@
+- diff -r dirOne dirTwo
+- For file character differences use:
+    https://platform.text.com/tools/diff-checker
