@@ -1,1 +1,5 @@
 https://checkserp.com/encode/unicode/
+
+
+
+tried XSS, SSTI, CSTI, SQL injection, command injection, type juggling, null byte injection and newline %00 and %0A no luck, invisible unicode injection \u200C 
