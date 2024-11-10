@@ -2,4 +2,4 @@ https://checkserp.com/encode/unicode/
 
 
 
-tried XSS, SSTI, CSTI, SQL injection, command injection, type juggling, null byte injection and newline %00 and %0A no luck, invisible unicode injection \u200C, Fuzzed for parameters using burpsuite wordlist from SecLists ?FUZZ= 
+tried XSS, SSTI, CSTI, SQL injection, command injection, type juggling, null byte injection and newline %00 and %0A no luck, invisible unicode injection \u200C, Fuzzed for parameters using burpsuite wordlist from SecLists ?FUZZ= , tried fuzzing /pages/validUserFUZZ (SecLists SQLi fuzzing) - nothing, tried FFUF on /pages/validUser/FUZZ 
