@@ -8,7 +8,7 @@ from pwn import*
 while True:
     try:
         procc = process('./pie_overflow', aslr=True)
-        pid = gdb.attach(procc, 'b *vuln+55\ncontinue')
+        # pid = gdb.attach(procc, 'b *vuln+55\ncontinue')
         print(procc.recv())
 
 
