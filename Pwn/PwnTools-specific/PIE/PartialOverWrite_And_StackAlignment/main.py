@@ -1,5 +1,9 @@
 from pwn import*
 
+# for future CTFs, in GDB info address main - piebase = offset (ex: 0xXF00, have to brute "X", ASLR will not touch those last 3 nibbles as the rule of thumb.)
+# pie_leak - offset = real_pie_offset
+# real_pie_offset + sym["win"]
+
 
 while True:
     try:
