@@ -4,6 +4,7 @@
 1) The leaking of source code was intended, we know this because if you go to **/console** to access the debug page it is removed, so they cleary intended to have the Debug mode enabled.
 2) Character set fuzzing is something that would've been done in Hindsight had I not been able to get anywhere
 3) Content-Types were changed, Request methods too, no luck. Got HEAD to work, but nothing was being actually processed or sent.
+4) Still a bit confused how it bypassed, I assume the 2 "=" either caused smt to break or it did a check as **=** because of that extra one.
 
 <img width="628" alt="Screenshot 2024-11-15 at 10 14 37 PM" src="https://github.com/user-attachments/assets/ff0db6b0-4f33-4115-a2f5-3b16f7112ca7">
 
