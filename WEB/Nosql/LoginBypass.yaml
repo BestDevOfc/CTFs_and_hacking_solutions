@@ -1,4 +1,4 @@
 - {"username": {"$ne": null}, "password": {"$ne": null} }
 
-
-
+- if it doesn't allow, change like it says "parse error" or wtv, maybe it's parsing the specific key values and running .json parse on them:
+  - {"username": "{\"$ne\": null}", "password": "{\"$ne\": null} }"}
