@@ -1,0 +1,1 @@
+- {"username": {"$ne": null}, "password": {"$ne": null} }
