@@ -1,0 +1,1 @@
+<?php;echo "echo$"+"{IFS}'1'>>lol.txt";?>
