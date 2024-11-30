@@ -1,0 +1,4 @@
+/var/www/html/index.php
+/proc/self/environ, cmdline, map, mounts, PID busting
+/var/www/apache2/apache2.conf
+/etc/apache2/sites-available/000-default.conf
