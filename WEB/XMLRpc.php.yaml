@@ -14,4 +14,4 @@
 </value></param></params>
 </methodCall>
        ^^^ will say smt abt faulString, check collab to make sure it worked.
-           weird thing is that if you send more than 1/2 it won't send
+           weird thing is that if you send more than 1/2 it won't send again.
