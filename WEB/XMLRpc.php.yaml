@@ -5,6 +5,8 @@ https://the-bilal-rizwan.medium.com/wordpress-xmlrpc-php-common-vulnerabilites-h
             |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_xmlrpc_login/
             |  - https://www.rapid7.com/db/modules/auxiliary/scanner/http/wordpress_pingback_access/
 
+This guy got LFI from it: https://shahjerry33.medium.com/cross-site-port-attack-a-strangers-call-c2467f93792f
+
 - List Methods:
   <methodCall>
     <methodName>system.listMethods</methodName>
