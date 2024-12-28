@@ -1,7 +1,7 @@
 AMD QEMU virtualization:
   - docker run -it --platform linux/amd64 rofrano/vagrant-provider:debian bash
   - docker run -it --platform linux/amd64 kalilinux/kali-rolling bash
-
+  - or just "--platform linux/amd64"
 
 General:
   - docker images (to see your images)
