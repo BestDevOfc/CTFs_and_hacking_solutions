@@ -1,0 +1,7 @@
+Install tool:
+  brew install qemu
+
+Convert the VMDK to an ISO:
+  qemu-img convert -O raw input.vmdk output.iso
+Mount the ISO on macOS:
+  hdiutil attach output.iso
