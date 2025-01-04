@@ -1,0 +1,7 @@
+for parameters url encode the parameter name
+
+/?PARAMETERNAME_URL_ENCODED=VALUE_NOT_URL_ENCODED
+
+For paths just use a backslash  '\'
+
+/\blocked-path
