@@ -1,0 +1,13 @@
+Input 2 JWT tokens and it'll attempt to derive the public key. You may need to set the -e option to 1337 or put it in a loop to try and find an uncommon one,
+
+What worked for me was either https://github.com/silentsignal/rsa_sign2n/blob/release/standalone/jwt_forgery.py with manually modifying the exponent in code or
+
+https://github.com/FlorianPicca/JWT-Key-Recovery with -e 1337
+
+
+Then you have 2 options:
+1) attempt algorithm confusion now that you have the public key
+2) attempt to derive private key if the keypair is unsecure 
+
+recover private key from public key with https://github.com/RsaCtfTool/RsaCtfTool
+
