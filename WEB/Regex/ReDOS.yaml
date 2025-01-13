@@ -1,0 +1,3 @@
+// Prefix: "justCTF"
+// Guess : "a"
+let regex = "^(?=justCTF{a).*.*.*.*.*.*.*.*.*.*ABCDE";
