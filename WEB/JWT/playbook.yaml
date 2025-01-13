@@ -1,0 +1,5 @@
+1) Try no algorithm trick (doesn't have a signature so you can just make one)
+2) If there is a JWK use Andy's script to try and factor the N to get the private key (/jwks.json and /well-known path)
+3) If there is no Public key take 2 JWTs and use the -e script to get the public key, sometimes the exponent is not common like 1337 or some number, you may have to run it throuhg a loop or something
+  - then you can try algorithm confusion to change it to HS256 since you have public key (portswigger talks about this)
+4) If algorithm confusion doesn't work try breaking the key pair and derive a private key (RSACTF TOOLS).
