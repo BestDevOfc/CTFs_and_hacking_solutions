@@ -2,3 +2,7 @@ https://github.com/RickdeJager/CTF/blob/master/JUSTCAT2020/web/computeration/wri
 // Prefix: "justCTF"
 // Guess : "a"
 let regex = "^(?=justCTF{a).*.*.*.*.*.*.*.*.*.*ABCDE";
+
+
+/(^uoftctf\{CHARACTER_HERE.*$)|(^u(.*?)*o(.*?)*f(.*?)*t(.*?)*c(.*?)*t(.*?)*f(.*?)*\{(.*?)*(.*?)*(.*?)*(.*?)*(.*?)*(.*?)*(.*?)*(.*?)*(.*?)*(.*?)*(.*?)*~$)/
+- if it loads fast it found it (right character, otherwise it'll lag a bit).
