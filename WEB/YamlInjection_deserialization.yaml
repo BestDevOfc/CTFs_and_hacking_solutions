@@ -1,0 +1,1 @@
+yaml: !!python/object/apply:subprocess.check_output ['ls']
