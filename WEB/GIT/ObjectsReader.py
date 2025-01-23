@@ -1,3 +1,5 @@
+# git ls-files -s for hashes
+# .git/objects/hash[:2]/hash[2:]
 import zlib
 import os
 
