@@ -1,3 +1,4 @@
+https://www.hackerone.com/blog/how-graphql-bug-resulted-authentication-bypass
 ```
 {
   __schema {
