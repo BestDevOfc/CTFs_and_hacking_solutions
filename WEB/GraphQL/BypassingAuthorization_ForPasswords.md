@@ -1,3 +1,4 @@
+```
 {
   __schema {
     types {
@@ -16,7 +17,7 @@
     }
   }
 }
-
+```
 
 <img width="933" alt="Screenshot 2025-01-24 at 8 39 11 PM" src="https://github.com/user-attachments/assets/f3abd4bf-2a19-4c6f-9fe6-aaa0d231dbdd" />
 <img width="653" alt="Screenshot 2025-01-24 at 8 39 24 PM" src="https://github.com/user-attachments/assets/519fce34-474e-4c86-a114-dba23bf79157" />
