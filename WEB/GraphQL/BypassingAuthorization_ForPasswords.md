@@ -1,0 +1,26 @@
+{
+  __schema {
+    types {
+      name
+      fields {
+        name
+        type {
+          name
+          kind
+          ofType {
+            name
+            kind
+          }
+        }
+      }
+    }
+  }
+}
+
+
+<img width="933" alt="Screenshot 2025-01-24 at 8 39 11 PM" src="https://github.com/user-attachments/assets/f3abd4bf-2a19-4c6f-9fe6-aaa0d231dbdd" />
+<img width="653" alt="Screenshot 2025-01-24 at 8 39 24 PM" src="https://github.com/user-attachments/assets/519fce34-474e-4c86-a114-dba23bf79157" />
+<img width="638" alt="Screenshot 2025-01-24 at 8 39 36 PM" src="https://github.com/user-attachments/assets/6bacc61f-5909-4523-8bda-b9d6c3d65075" />
+<img width="579" alt="Screenshot 2025-01-24 at 8 39 52 PM" src="https://github.com/user-attachments/assets/9706a922-a863-4273-a661-9f1ee007274f" />
+<img width="570" alt="Screenshot 2025-01-24 at 8 40 09 PM" src="https://github.com/user-attachments/assets/03437e0c-df95-4a88-8638-44e81375eb97" />
+
