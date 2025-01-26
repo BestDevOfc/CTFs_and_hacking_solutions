@@ -1,4 +1,6 @@
 LFI /var/run/secrets/kubernetes.io/serviceaccount/token
+kubectl auth can-i --list -n suspicious_namespace
+
 
 apiVersion: v1
 kind: Config
