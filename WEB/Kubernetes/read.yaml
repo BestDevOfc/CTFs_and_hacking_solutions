@@ -1,0 +1,19 @@
+LFI /var/run/secrets/kubernetes.io/serviceaccount/token
+
+apiVersion: v1
+kind: Config
+clusters:
+- cluster:
+    server: <URL>
+    insecure-skip-tls-verify: true
+  name: digitalocean-cluster
+contexts:
+- context:
+    cluster: digitalocean-cluster
+    user: sa-user
+  name: sa-context
+current-context: sa-context
+users:
+- name: sa-user
+  user:
+    token: TOKEN
