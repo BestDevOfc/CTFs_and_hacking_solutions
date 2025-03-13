@@ -1,85 +1,53 @@
 https://www.hackerone.com/blog/how-graphql-bug-resulted-authentication-bypass
+
+**Another one:**
+- from GQL Voyager
 ```
-{
-  __schema {
-    types {
-      name
-      fields {
-        name
-        type {
+
+    query IntrospectionQuery {
+      __schema {
+        
+        queryType { name }
+        mutationType { name }
+        subscriptionType { name }
+        types {
+          ...FullType
+        }
+        directives {
           name
-          kind
-          ofType {
-            name
-            kind
+          description
+          
+          locations
+          args {
+            ...InputValue
           }
         }
       }
     }
-  }
-}
-```
 
-**Another one:**
-```
-{
-  __schema {
-    queryType {
-      name
-    }
-    mutationType {
-      name
-    }
-    subscriptionType {
-      name
-    }
-    types {
+    fragment FullType on __Type {
       kind
       name
       description
+      
+      
       fields(includeDeprecated: true) {
         name
         description
         args {
-          name
-          description
-          type {
-            kind
-            name
-            ofType {
-              kind
-              name
-            }
-          }
-          defaultValue
+          ...InputValue
         }
         type {
-          kind
-          name
-          ofType {
-            kind
-            name
-          }
+          ...TypeRef
         }
         isDeprecated
         deprecationReason
       }
       inputFields {
-        name
-        description
-        type {
-          kind
-          name
-          ofType {
-            kind
-            name
-          }
-        }
-        defaultValue
+        ...InputValue
       }
       interfaces {
-        kind
-        name
+        ...TypeRef
       }
       enumValues(includeDeprecated: true) {
         name
@@ -88,30 +56,60 @@ https://www.hackerone.com/blog/how-graphql-bug-resulted-authentication-bypass
         deprecationReason
       }
       possibleTypes {
-        kind
-        name
+        ...TypeRef
       }
     }
-    directives {
+
+    fragment InputValue on __InputValue {
       name
       description
-      locations
-      args {
+      type { ...TypeRef }
+      defaultValue
+      
+      
+    }
+
+    fragment TypeRef on __Type {
+      kind
+      name
+      ofType {
+        kind
         name
-        description
-        type {
+        ofType {
           kind
           name
           ofType {
             kind
             name
+            ofType {
+              kind
+              name
+              ofType {
+                kind
+                name
+                ofType {
+                  kind
+                  name
+                  ofType {
+                    kind
+                    name
+                    ofType {
+                      kind
+                      name
+                      ofType {
+                        kind
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
-        defaultValue
       }
     }
-  }
-}
+  
 
 ```
 
