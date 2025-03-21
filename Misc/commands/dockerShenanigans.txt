@@ -5,6 +5,7 @@ AMD QEMU virtualization:
 
 General:
   - docker images (to see your images)
+  - sudo docker exec -it ec2955ccf7c6 /bin/bash
   - docker run -it my_docker_image2 /bin/bash
     - get an interactive shell
 
