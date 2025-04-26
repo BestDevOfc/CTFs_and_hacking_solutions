@@ -12,3 +12,9 @@ General:
 For PWN:
   1) build: docker build -t my_docker_image .
   2) deploy: 
+
+Pulling all the files without running:
+  docker create --name NAME_temp NAME
+  docker export NAME_temp > NAME.tar
+  mkdir NAME_rootfs
+  tar -xf NAME.tar -C NAME_rootfs
