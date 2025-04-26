@@ -10,6 +10,8 @@
 
   - Pixels (blurred)
       - Use DePix
+- For Images use
+      - https://youtube.com/watch?v=acKYYwcxpGk
 
 - run exiftool and look for docx, etc and then use the microsoft or respective software to unredact it.
     [*] for example, we were given a PDF file but running exiftool on it shows: 
