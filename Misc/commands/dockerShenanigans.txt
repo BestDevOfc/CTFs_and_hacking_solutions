@@ -4,11 +4,13 @@ AMD QEMU virtualization:
   - or just "--platform linux/amd64"
 
 General:
+  - docker ps (to see your CONTAINERS)
   - docker images (to see your images)
   - sudo docker exec -it ec2955ccf7c6 /bin/bash
   - docker run -it my_docker_image2 /bin/bash
     - get an interactive shell
-
+  - to move files from an inside of a docker container to host
+      - docker cp your-container-name:/PAth /tmp/filename
 For PWN:
   1) build: docker build -t my_docker_image .
   2) deploy: 
