@@ -1,0 +1,2 @@
+https://dbeaver.io/
+SQLITE_Viewer
