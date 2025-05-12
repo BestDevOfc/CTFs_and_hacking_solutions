@@ -4,9 +4,16 @@
 <img width="319" alt="Screenshot 2025-05-11 at 9 43 23 PM" src="https://github.com/user-attachments/assets/a10335ea-390b-4cf2-bed2-7feefcdbf7d4" />
 
 There are 3 ways to solve this:
-1) ```XSW```
+1) ```Signature Removal```
 2) ```Self-Signing```
 3) ```Signing using leaked Private Key in Forum```
+
+Stuff I tried:
+1) ```Credential spraying```
+2) ```CVE hunting```
+3) ```Fuzzing```
+4) ```XSW```
+5) ```XXE```
 
 - This challenge had numerous steps, I'll quickly just provide the context around it. Pretty much there's a PHPBB based forum where they provide a service for password stealers.
 You download their chrome extension and install it in people's browsers. Then the keylogged credentials are sent over to the forum's subdomain ```mwaas.el1t3.fun```
@@ -19,12 +26,35 @@ after authenticating to the IDP we need some sort of "proof" to send back to the
 ```SAMLResponseToken```. In our case this is ```Base64Encoded``` + ```URLEncoded``` and is a POST request sent to ```mwaas.el1t3.fun``` after the credentials are sent to the IDP
 at ```el1t3.fun```.
 
+- Lastly, SAML can also handle ```authorization```, here's an example below of something the ```IDP``` will return. The difference between this and ```OAuth``` is that the authorization
+is more ```SP-side``` whereas OAuth authorization is server-side. For example when you login with ```Google``` to some apps they ```request authorization to your google drive files```, for instance.
+
+Analogy:
+- ```SAML```: “Here’s who the user is and what they can do. ```You (SP) decide how to handle that.```”
+- ```OAuth```: “Here’s a ```token``` saying the user let me access ```their calendar```. Let me in.”
+
+```xml
+<saml:AttributeStatement>
+  <saml:Attribute Name="username">
+    <saml:AttributeValue>alice</saml:AttributeValue>
+  </saml:Attribute>
+  <saml:Attribute Name="role">
+    <saml:AttributeValue>admin</saml:AttributeValue>
+    <saml:AttributeValue>editor</saml:AttributeValue>
+  </saml:Attribute>
+  <saml:Attribute Name="department">
+    <saml:AttributeValue>finance</saml:AttributeValue>
+  </saml:Attribute>
+</saml:AttributeStatement>
+```
+
 - Now how does the ```SP``` know that the SAMLToken that we send isn't tampered with? This is done using the ```Signatures``` (kind of like ```JWTs```) that are embedded within the
 ```assertation```. These signatures are signed using the ```IDP's private key``` and are verified by the ```SP using the IDP's PUBLIC key``` (very similar to assymetric ```JWT sessions```).
 
 - So logically, the attacks are very very similar to ```JWT attacks```, we can try attacks such as: ```signature removal```, ```signature forgery (confusion)```, ```parsing discrepancies```, etc.
 
 - ⚠️ It's important to note there's also attacks against the ```IDP ITSELF```, such as ```misconfigured SAML implementations```, ```using different subdomains that don't use the same DB but the same signing keys, etc```.
+
 - Moreover, I also attempted to enumerate the version of the ```SimpleSamlPHP``` and search for lowhanging CVEs surrounding it. These are all against the IDP itself, however, attacking
 the ```SP``` tends to be easier.
 
@@ -81,7 +111,7 @@ Lastly, this can be used by the ```IDP``` to understand how the authentication f
 
 - The ```intended solve``` was ```re-signing the assertations``` with the leaked ```private key``` in the forum.
   <img width="982" alt="Screenshot 2025-05-11 at 10 05 31 PM" src="https://github.com/user-attachments/assets/0b9f09cb-5052-4055-998a-fff0e3bf163d" />
-
+- for some reason I can't figure out how to get my private key in without it ```erroring out```.
 
 
 
