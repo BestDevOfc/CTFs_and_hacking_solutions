@@ -112,7 +112,7 @@ Lastly, this can be used by the ```IDP``` to understand how the authentication f
 - The ```intended solve``` was ```re-signing the assertations``` with the leaked ```private key``` in the forum.
   <img width="982" alt="Screenshot 2025-05-11 at 10 05 31 PM" src="https://github.com/user-attachments/assets/0b9f09cb-5052-4055-998a-fff0e3bf163d" />
 - for some reason I can't figure out how to get my private key in without it ```erroring out```.
-^ Apparantely you needed to ```convert the private key into a traditional RSA keypair``` using this ```openssl rsa -in private_key.pem -out server_new.key -traditional`` and
+^ Apparantely you needed to ```convert the private key into a traditional RSA keypair``` using this ```openssl rsa -in private_key.pem -out server_new.key -traditional``` and
 THEN ```import it into SAMLRaider```. 
 
 
