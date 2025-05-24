@@ -1,0 +1,3 @@
+- **Hacktricks Java pentesting**
+- Fuzz for **ACTUATORS** in all routes recursively so if there's **api**, do **/api/Acutator stuff**
+- 
