@@ -20,3 +20,10 @@ Pulling all the files without running:
   docker export NAME_temp > NAME.tar
   mkdir NAME_rootfs
   tar -xf NAME.tar -C NAME_rootfs
+
+Running it locally:
+docker build -t ctfchallenge .
+docker run -d \          
+  --name ctfchallenge \
+  -p 80:80 \
+  ctfchallenge
