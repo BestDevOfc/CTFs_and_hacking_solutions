@@ -1,0 +1,42 @@
+- URLEncode
+- double 
+- Unicode
+- hex
+- cluster bomb (multiple places kinda like the LFI bypass on Collin writeups)
+%0D
+%0A
+%00
+`
+~
+!
+@
+#
+$
+%
+^
+&
+*
+(
+)
+-
+_
+=
++
+[
+]
+{
+}
+\
+|
+;
+:
+'
+"
+,
+<
+.
+>
+/
+?
+
+ 
