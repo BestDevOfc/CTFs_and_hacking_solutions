@@ -4,6 +4,7 @@ AMD QEMU virtualization:
   - or just "--platform linux/amd64"
 
 General:
+  - view docker STDOUT logs `docker compose logs -f CONTAINER_NAME`
   - docker ps (to see your CONTAINERS)
   - docker images (to see your images)
   - sudo docker exec -it ec2955ccf7c6 /bin/bash
