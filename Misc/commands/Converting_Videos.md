@@ -4,5 +4,8 @@ ffmpeg -i input.mov -vcodec libx264 -crf 23 -preset medium -acodec aac -b:a 128k
 ```
 
 
+HEIC to PNG converter
+```
 sips -s format png input.heic --out output.png
 for f in *.heic; do sips -s format png "$f" --out "${f%.heic}.png"; done
+```
