@@ -16,8 +16,8 @@
         <username>dededededededededededededede&exfil;</username>
         <password>lol</password>
         <name>Alexandra</name>
-        <email>alex@astromine.com</email>  
-        <company>Astromine</company>
+        <email>adminemail</email>  
+        <company>admin</company>
         <isAdmin>1</isAdmin>
     </user>
 ```
